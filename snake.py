@@ -9,6 +9,7 @@ class Snake:
         self.xpos = 0
         self.bodies = []
         self.create_snake()
+        self.head = self.bodies[0]
 
     def create_snake(self):
         '''Create 3 snake body objects'''
@@ -26,3 +27,15 @@ class Snake:
             new_y = self.bodies[snake_bod - 1].ycor()
             self.bodies[snake_bod].goto(new_x, new_y)
         self.bodies[0].forward(MOVE_DISTANCE)
+
+    def up(self):
+        self.head.setheading(90)
+
+    def down(self):
+        self.head.setheading(270)
+
+    def left(self):
+        self.head.setheading(180)
+
+    def right(self):
+        self.head.setheading(0)

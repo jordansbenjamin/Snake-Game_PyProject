@@ -14,12 +14,25 @@ class Snake:
     def create_snake(self):
         '''Create 3 snake body objects'''
         for snake_body in range(3):
-            snake_body = Turtle('square')
-            snake_body.color('white')
-            snake_body.penup()
-            snake_body.goto(x=self.xpos, y=0)
-            self.xpos += -20
-            self.bodies.append(snake_body)
+            self.add_body(snake_body)
+            # snake_body = Turtle('square')
+            # snake_body.color('white')
+            # snake_body.penup()
+            # snake_body.goto(x=self.xpos, y=0)
+            # self.xpos += -20
+            # self.bodies.append(snake_body)
+
+    def add_body(self, snake_body):
+        snake_body = Turtle('square')
+        snake_body.color('white')
+        snake_body.penup()
+        snake_body.goto(x=self.xpos, y=0)
+        self.xpos += -20
+        self.bodies.append(snake_body)
+
+    def extend(self):
+        '''Add a new body/segement to the snake'''
+        self.add_body(self.bodies[-1].position())
 
     def move(self):
         for snake_bod in range(len(self.bodies) - 1, 0, -1):

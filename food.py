@@ -7,7 +7,7 @@ class Food(Turtle): # Inherting the Turtle class, which is the superclass
         self.shape('circle')
         self.penup()
         self.shapesize(stretch_len=0.5, stretch_wid=0.5)
-        self.color('blue')
+        self.color('lightgreen')
         self.speed('fastest')
         self.new_location()
         

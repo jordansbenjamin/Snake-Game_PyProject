@@ -6,8 +6,8 @@ MOVE_DISTANCE = 10
 class Snake:
 
     def __init__(self):
-        self.xpos = 0
         self.bodies = []
+        self.xpos = 0
         self.create_snake()
         self.head = self.bodies[0]
 

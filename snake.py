@@ -56,3 +56,10 @@ class Snake:
     def right(self):
         if self.head.heading() != 180:
             self.head.setheading(0)
+
+    def reset_snake(self):
+        for body in self.bodies:
+            body.goto(1000,1000)
+        self.bodies.clear()
+        self.create_snake()
+        self.head = self.bodies[0]

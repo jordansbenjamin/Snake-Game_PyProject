@@ -3,9 +3,10 @@ from turtle import Turtle
 # XPOS = 0
 MOVE_DISTANCE = 10
 
-class Snake:
+class Snake(Turtle):
 
     def __init__(self):
+        super().__init__()
         self.bodies = []
         self.xpos = 0
         self.create_snake()
@@ -15,12 +16,6 @@ class Snake:
         '''Create 3 snake body objects'''
         for snake_body in range(3):
             self.add_body(snake_body)
-            # snake_body = Turtle('square')
-            # snake_body.color('white')
-            # snake_body.penup()
-            # snake_body.goto(x=self.xpos, y=0)
-            # self.xpos += -20
-            # self.bodies.append(snake_body)
 
     def add_body(self, snake_body):
         snake_body = Turtle('square')
@@ -59,6 +54,7 @@ class Snake:
 
     def reset_snake(self):
         for body in self.bodies:
+            body.hideturtle()
             body.goto(1000,1000)
         self.bodies.clear()
         self.create_snake()
